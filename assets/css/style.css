@@ -1,0 +1,91 @@
+
+:root{
+  --primary:#10375c;
+  --accent:#ff6b6b;
+  --secondary:#00a8e8;
+  --dark:#071e3d;
+  --light:#f4f7fa;
+  --gradient:linear-gradient(135deg,var(--secondary) 0%,var(--primary) 100%);
+}
+
+body{font-family:'Poppins',sans-serif;color:#444;background:var(--light);}
+.section-padding{padding:5rem 0;scroll-margin-top:80px;}
+.navbar{
+  background:#fff;
+  box-shadow:0 2px 10px rgba(0,0,0,.05);
+  transition:all .3s;
+}
+.navbar-brand{color:var(--primary);}
+.navbar .nav-link{
+  position:relative;
+  font-weight:500;
+  margin:0 .5rem;
+}
+.navbar .nav-link.active,
+.navbar .nav-link:hover{color:var(--accent);}
+.navbar .nav-link::after{
+  content:'';
+  position:absolute;
+  left:0;
+  bottom:-5px;
+  width:100%;
+  height:2px;
+  background:var(--accent);
+  transform:scaleX(0);
+  transition:transform .3s;
+}
+.navbar .nav-link:hover::after,
+.navbar .nav-link.active::after{transform:scaleX(1);}
+.btn-accent{
+  background:var(--accent);
+  border:none;
+  color:#fff;
+}
+.btn-accent:hover{background:#ff4d4d;color:#fff;}
+.btn-outline-accent{
+  border:2px solid var(--accent);
+  color:var(--accent);
+}
+.btn-outline-accent:hover{
+  background:var(--accent);
+  color:#fff;
+}
+.hero-section{
+  min-height:100vh;
+  background-size:cover;
+  background-position:center;
+  position:relative;
+  padding-top:80px;
+}
+.hero-section .overlay{
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,.55);
+}
+.hero-section .container{position:relative;z-index:2;}
+.text-accent{color:var(--accent);}
+.service-card{
+  background:#fff;
+  transition:transform .3s,box-shadow .3s;
+}
+.service-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 1rem 2rem rgba(0,0,0,.15);
+}
+.portfolio-item img{transition:transform .4s;}
+.portfolio-item:hover img{transform:scale(1.05);}
+.portfolio-overlay{
+  position:absolute;
+  inset:0;
+  background:rgba(16,55,92,.85);
+  opacity:0;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  transition:opacity .3s;
+}
+.portfolio-item:hover .portfolio-overlay{opacity:1;}
+.footer{background:var(--dark);}
+
+.navbar-shrink{padding-top:.5rem;padding-bottom:.5rem;box-shadow:0 1px 5px rgba(0,0,0,.1);}
